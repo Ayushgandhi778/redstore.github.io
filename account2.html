@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products-RedStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>           
+     <div class="container">
+                    <div class="navbar">
+                            <div class="logo">
+                                <img src="D:\new major project\images/logo.png" width="125px">
+                            </div>
+                            <nav>
+                                <ul id="MenuItems">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="file:///D:/new%20major%20project/product.html">Products</a></li>
+                                    <li><a href="">About</a></li>
+                                    <li><a href="">Contact</a></li> 
+                                    <li><a href="account.html">Account</a></li>
+                                </ul>
+                            </nav>
+                            <a href="cart.html"><img src="D:\new major project\images/cart.png" width="30px" height="30px"></a>
+                            <img src="D:\new major project\images/menu.png" class="menu-icon"
+                             onclick="menutoggle()">
+                    </div>
+            </div>    
+            <!-------------account page------------->
+            <div class="account-page">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="D:\new major project\images/image1.png" width="100%">
+                        </div>
+
+                        <div class="col-2">
+                            <div class="form-container">
+                                <div class="form-btn">
+                                    <span onclick="login()">Login</span>
+                                    <span onclick="register()">Register</span>
+                                    <hr id="indicator">
+                                </div>
+
+                                <form id="loginform" onsubmit="return myfun()">
+                                    <input type="text" placeholder="Username">
+                                    <input type="password" placeholder="password" value=" " id="passwords">
+                                    <span id="messages"></span>
+                                    <button type="submit" class="btn" value="Submit">Login</button>
+                                    <a href="">Forgot Password</a>
+                                </form>
+
+                                <form id="regform">
+                                        <input type="text" placeholder="Username">
+                                        <input type="Email" placeholder="Email">
+                                        <input type="password" placeholder="password">
+                                        <button type="submit" class="btn">Register</button>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       <!-------------footer------------->
+       <div class="footer">
+           <div class="container">
+               <div class="row">
+                   <div class="footer-col-1">
+                       <h3>Download Our App</h3>
+                       <p>Download App for Android And IOS mobile Phone.</p>
+                       <div class="app-logo">
+                           <img src="D:\new major project\images/play-store.png" alt="">
+                           <img src="D:\new major project\images/app-store.png" alt="">
+                       </div>
+                   </div>
+                   <div class="footer-col-2">
+                        <img src="D:\new major project\images/logo-white.png" alt="">
+                        <p>our purpose is to sustainably make the pleasure and benefits
+                            of sports accessible to the many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                            <h3><b> Get to Know Us</b></h3>
+                            <ul>
+                                    <a href="">About Us</a><br>
+                                    <a href="">Careers</a><br>
+                                    <a href="">Press Releases</a><br>
+                                    <a href="">  Amazon Cares</a><br>
+                                    <a href="">  Gift a Smile</a><br>
+                                    <a href="">Amazon Science</a><br>
+                            </ul>
+                        </div>
+                        <div class="footer-col-4">
+                                <h3><b>Connect with Us</b></h3>
+                                <ul>
+                                        <a href=""> Facebook</a> <br>
+                                         <a href="">Twitter</a> <br>
+                                         <a href="">Instagram</a> <br>
+                                </ul>
+                            </div>
+                            <div class="footer-col-5">
+                                    <h3><b>Make Money with Us</b></h3>
+                                    <ul>     
+                                            <a href="">Sell on Amazon</a> <br>
+                                           <a href=""> Sell under Amazon Accelerator</a><br>
+                                            <a href="">Amazon Global Selling</a> <br>
+                                            <a href="">Become an Affiliate</a> <br>
+                                            <a href="">Fulfilment by Amazon</a>
+                                    </ul>
+                                </div>
+               </div>
+           </div>
+       </div>
+           <!----------------------js for toggle menu------------------>
+           <script>
+                var MenuItems= document.getElementById("MenuItems");
+                MenuItems.style.maxHeight="0px";
+         
+                function menutoggle(){
+                    if(MenuItems.style.maxHeight=="0px")
+                    {
+                        MenuItems.style.maxHeight="200px";
+                    }
+                    else
+                    {
+                        MenuItems.style.maxHeight="0px";
+                    }
+                }
+                
+                </script>
+                 <!----------------------js for toggle form------------------>
+                 <script>
+
+                 var loginform=document.getElementById("loginform");
+                 var regform=document.getElementById("regform");
+                 var indicator=document.getElementById("indicator");
+
+                    function register(){
+                        regform.style.transform="translateX(0px)";
+                        loginform.style.transform="translateX(0px)";
+                        indicator.style.transform="translateX(100px)";
+                    }
+                    
+                    function login(){
+                        regform.style.transform="translateX(300px)";
+                        loginform.style.transform="translateX(300px)";
+                        indicator.style.transform="translateX(0px)";
+                    }
+                 
+                 </script>
+                 <!----------------------password------------------>
+                 <script>
+                     function myfun(){
+                         var a=document.getElementById("passwords").value;
+
+                         if(a==" "){
+                            document.getElementById("passwords").innerHTML="*Please Fill Password";
+                         }
+
+                     }
+                 </script>
+
+</body>
+</html>     
